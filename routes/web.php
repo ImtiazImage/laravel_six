@@ -37,6 +37,7 @@ Route::post('/update-category/{id}', 'boloController@UpdateCategory');
 // Student
 Route::get('students','StudentController@Student')->name('student');
 Route::post('store-student','StudentController@Store')->name('store.student');
+Route::get('all-students','StudentController@index')->name('all.students');
 
 Route::prefix('gt')->group(function() {  
     Route::get('home',function(){

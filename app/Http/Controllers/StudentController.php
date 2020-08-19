@@ -7,6 +7,13 @@ use App\Student;
 
 class StudentController extends Controller
 {
+
+    public function index()
+    {
+        $student = Student::all();
+        return view('student.all-students')->with('students',$student);
+    }
+
     public function Student()
     {
         return view('student.create');

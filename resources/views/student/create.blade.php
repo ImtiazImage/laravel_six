@@ -20,7 +20,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-                <a href="#" class="btn btn-info">   All Students </a>
+                <a href="{{Route('all.students')}}" class="btn btn-info">   All Students </a>
                 <hr /><br />
                 <h3>Add New Student</h3>
 
