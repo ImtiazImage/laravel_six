@@ -38,6 +38,8 @@ Route::post('/update-category/{id}', 'boloController@UpdateCategory');
 Route::get('students','StudentController@Student')->name('student');
 Route::post('store-student','StudentController@Store')->name('store.student');
 Route::get('all-students','StudentController@index')->name('all.students');
+Route::get('view-single-student/{id}','StudentController@SingleViewStudent');
+Route::get('delete-student/{id}', 'StudentController@Destroy');
 
 Route::prefix('gt')->group(function() {  
     Route::get('home',function(){

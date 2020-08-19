@@ -41,7 +41,7 @@
                         <td>
                             <a href="{{URL::to('edit-student/'.$std->id)}}" class="btn btn-sm btn-info">Edit</a>
                             <a href="{{URL::to('delete-student/'.$std->id)}}" id="delete" class="btn btn-sm btn-danger">Delete</a>
-                            <a href="{{URL::to('view-single-studnet/'.$std->id)}}" class="btn btn-sm btn-success">View</a>
+                            <a href="{{URL::to('view-single-student/'.$std->id)}}" class="btn btn-sm btn-success">View</a>
                         </td>
                     </tr>
                     @endforeach

@@ -14,6 +14,12 @@ class StudentController extends Controller
         return view('student.all-students')->with('students',$student);
     }
 
+    public function SingleViewStudent($id)
+    {
+        $student = Student::findorfail($id);
+        return response()->json($student);
+    }
+
     public function Student()
     {
         return view('student.create');
@@ -47,5 +53,17 @@ class StudentController extends Controller
             return Redirect()->back()->with($notification);
         }
         // return response()->json($student);
+    }
+
+    public function Destroy($id)
+    {
+        $student = Student::findorfail($id);
+        $student->delete();
+
+        $notification = array(
+            'message'=> 'Student Information delete Successfull!',
+            'alert-type' => 'success'
+        );
+        return Redirect()->back()->with($notification);
     }
 }
