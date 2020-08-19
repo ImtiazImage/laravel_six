@@ -40,6 +40,8 @@ Route::post('store-student','StudentController@Store')->name('store.student');
 Route::get('all-students','StudentController@index')->name('all.students');
 Route::get('view-single-student/{id}','StudentController@SingleViewStudent');
 Route::get('delete-student/{id}', 'StudentController@Destroy');
+Route::get('edit-student/{id}', 'StudentController@Edit');
+Route::post('update-student/{id}', 'StudentController@Update');
 
 Route::prefix('gt')->group(function() {  
     Route::get('home',function(){

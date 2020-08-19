@@ -55,6 +55,29 @@ class StudentController extends Controller
         // return response()->json($student);
     }
 
+    public function Edit($id)
+    {
+        $student = Student::findorfail($id);
+        return view('student.edit-student',compact('student'));
+    }
+
+    public function Update( Request $request, $id)
+    {
+        $student = Student::findorfail($id);
+
+        $student->name = $request->name;
+        $student->email= $request->email;
+        $student->phone= $request->phone;
+        $student->save();
+        
+        $notification = array(
+            'message' => 'Student Info has been successfully updated!',
+            'alert-type'=> 'success'
+        );
+        return Redirect()->route('all.students')->with($notification);
+    }
+
+
     public function Destroy($id)
     {
         $student = Student::findorfail($id);
